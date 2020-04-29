@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#F6F578</item>
+        <item name="colorPrimaryDark">#F6D743</item>
+        <item name="colorAccent">#06623B</item>
+    </style>
+
+    <string name="facebook_app_id">2932418886843028</string>
+    <string name="fb_login_protocol_scheme">fb2932418886843028</string>
+
+
+
+
+</resources>
