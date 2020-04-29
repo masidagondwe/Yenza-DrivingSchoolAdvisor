@@ -1,15 +1,21 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#F6F578</item>
-        <item name="colorPrimaryDark">#F6D743</item>
-        <item name="colorAccent">#06623B</item>
+        <item name="colorPrimary">#C1B89DE6</item>
+        <item name="colorPrimaryDark">#5828AA</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <string name="facebook_app_id">2932418886843028</string>
-    <string name="fb_login_protocol_scheme">fb2932418886843028</string>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 
 

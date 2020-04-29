@@ -100,8 +100,8 @@
 
                 <com.google.android.gms.common.SignInButton
                     android:id="@+id/google_sign_in"
-                    android:layout_width="200dp"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/login_or"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp">
@@ -111,12 +111,11 @@
 
                 <com.facebook.login.widget.LoginButton
                     android:id="@+id/facebook_sign_in"
-                    android:layout_width="200dp"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/google_sign_in"
                     android:layout_centerInParent="true"
-                    android:layout_marginTop="30dp"
-                    android:text="@string/sign_in" />
+                    android:layout_marginTop="30dp" />
 
             </RelativeLayout>
 
