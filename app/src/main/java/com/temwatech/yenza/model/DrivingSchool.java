@@ -3,6 +3,8 @@ package com.temwatech.yenza.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+
 public class DrivingSchool implements Parcelable {
 
     private String id;
@@ -12,9 +14,12 @@ public class DrivingSchool implements Parcelable {
     private int no_of_reviews;
     private String location;
 
+    private String ds_phone_number;
+    private String ds_email;
+
     //1 driving school - M images
-    private String imageUrl;
-    private String imageName;
+    private ArrayList<String> imageUrls;//private String imageUrl;
+    private  ArrayList<String> imageNames;//private String imageName;
 
     //1 driving school - M services
     private String service_offered;
