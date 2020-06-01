@@ -16,7 +16,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.temwatech.yenza.MainActivity;
 import com.temwatech.yenza.R;
 
@@ -34,8 +38,13 @@ public class HomeFragment extends Fragment {
     //
     private static final int SELECT_PICTURES = 10 ;
 
+    //image URIs
     ArrayList<Uri> mArrayUri = new ArrayList<Uri>();
     Uri imageUri;
+
+    //
+    int up = 0;
+    int k =0;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,
@@ -53,10 +62,10 @@ public class HomeFragment extends Fragment {
                 intent.setType("image/*");
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
                 startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURES);
-
-
             }
         });
+
+
 
         Log.d(TAG, "initRecyclerView: after fab click.");
         //findMatches();
@@ -106,4 +115,28 @@ public class HomeFragment extends Fragment {
             }
         }
     }
+
+
+    public void Upload(View view) {
+        StorageReference filepath = FirebaseStorage.getInstance().getReference().child("gpic");
+
+        while (up < mArrayUri.size()){
+
+            filepath.child(mArrayUri.get(k).getLastPathSegment()).putFile(mArrayUri.get(k)).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    //Toast.makeText(MainActivity.this, "Uploaded", Toast.LENGTH_LONG).show();
+
+
+
+                }
+            });
+            up++;
+            k++;
+
+        }
+
+    }
+
+
 }
