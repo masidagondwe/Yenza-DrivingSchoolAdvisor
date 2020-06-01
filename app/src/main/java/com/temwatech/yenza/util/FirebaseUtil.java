@@ -14,8 +14,7 @@ import com.google.firebase.storage.StorageReference;
 import com.temwatech.yenza.model.DrivingSchool;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 import androidx.annotation.NonNull;
 
@@ -50,7 +49,7 @@ public class FirebaseUtil {
                     }
                     else {
                         String userId = firebaseAuth.getUid();
-                        checkAdmin(userId);
+                        checkSchoolOwner(userId);
                     }
                     Toast.makeText(callerActivity.getBaseContext(), "Welcome back!", Toast.LENGTH_LONG).show();
                 }
@@ -67,7 +66,7 @@ public class FirebaseUtil {
 
     }
 
-    private static void checkAdmin(String uid) {
+    private static void checkSchoolOwner(String uid) {
         FirebaseUtil.isSchoolOwner = false;
         DatabaseReference ref = mFirebaseDatabase.getReference().child("administrators")
                 .child(uid);
