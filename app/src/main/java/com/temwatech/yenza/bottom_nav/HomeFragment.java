@@ -1,26 +1,18 @@
 package com.temwatech.yenza.bottom_nav;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-import com.temwatech.yenza.MainActivity;
+import com.temwatech.yenza.AddSchoolFragment;
 import com.temwatech.yenza.R;
 
-import java.util.ArrayList;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import static android.content.ContentValues.TAG;
 
@@ -34,30 +26,24 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                              ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View homeFragmentView = inflater.inflate(R.layout.fragment_home, container, false);
 
         Log.d(TAG, "onCreateView Home Fragment: started.");
 
-        btnAddSchool = view.findViewById(R.id.fab_add);
+        btnAddSchool = homeFragmentView.findViewById(R.id.fab_add);
 
         btnAddSchool.setOnClickListener(this);
 
-
-
-        Log.d(TAG, "initRecyclerView: after fab click.");
-        //findMatches();
-
-        return view;
-
+        return homeFragmentView;
     }
-
-
-
 
 
 
     @Override
     public void onClick(View v) {
-
+        Log.d(TAG, "Home fragment: fab clicked");
+        AddSchoolFragment fragment = new AddSchoolFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.main_content_frame, fragment, getString(R.string.tag_fragment_add_school));
     }
 }
