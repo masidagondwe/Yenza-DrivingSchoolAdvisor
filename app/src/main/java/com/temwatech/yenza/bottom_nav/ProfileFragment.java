@@ -1,4 +1,4 @@
-package com.temwatech.yenza.ui.profile;
+package com.temwatech.yenza.bottom_nav;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -16,11 +16,10 @@ import com.temwatech.yenza.R;
 
 public class ProfileFragment extends Fragment {
 
-    private ProfileViewModel mViewModel;
 
-    public static ProfileFragment newInstance() {
+/*    public static ProfileFragment newInstance() {
         return new ProfileFragment();
-    }
+    }*/
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -28,11 +27,6 @@ public class ProfileFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(ProfileViewModel.class);
-        // TODO: Use the ViewModel
-    }
+
 
 }
