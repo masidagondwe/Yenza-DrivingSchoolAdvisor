@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorAccent">#06623B</color>
+    <color name="colorAccentDark">#00411A</color>
 
     <color name="Black">#000</color>
     <color name="linkBlue">#0000FF</color>
